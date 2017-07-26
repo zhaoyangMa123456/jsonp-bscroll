@@ -39,6 +39,9 @@
         this._initBScroll()
       }, 20)
     },
+    destroyed () {
+      clearTimeout(this.timer)
+    },
     methods: {
       _initWidth () {
         this.sliderGroup = this.$refs.sliderGroup
@@ -61,6 +64,7 @@
           scrollY: false,
           momentum: false,
           snap: true,
+          click: true,
           snapLoop: this.loop,
           snapThreshold: 0.3,
           snapSpeed: 400
